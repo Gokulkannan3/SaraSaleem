@@ -1,7 +1,7 @@
 .home-container {
   display: flex;
   height: 100vh;
-  background: url('/public/bg.png') no-repeat center center/cover;
+  background: url('/public/bg.jpeg') no-repeat  top/cover;
   color: white;
   font-family: 'Segoe UI', sans-serif;
   overflow: hidden;
@@ -55,10 +55,10 @@
   display: block;                /* full‑width link */
   width: 100%;
   text-align: right;             /* text flush right */
-  color: white;
+  color: rgba(255, 255, 255, 0.514);
   font-size: 18px;
   text-decoration: none;
-  
+    
   padding: 8px 0;                /* vertical spacing */
   border-bottom: 1px solid white;/* the underline */
   transition: border-color 0.3s;  /* for hover fade if you like */
@@ -66,13 +66,10 @@
 
 
 .right-section a:hover {
-  border-color: rgba(255,255,255,0.6); /* fade the line on hover */
+  border-color: rgb(255, 255, 255);
+  color: #ffffff; /* fade the line on hover */
 }
 
-
-/* src/Components/Home/Home.css */
-
-/* src/Components/Home/Home.css */
 
 .logo-image {
   width: 100%;

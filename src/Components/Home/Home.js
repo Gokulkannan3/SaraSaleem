@@ -1,6 +1,5 @@
 import React from 'react';
 import './Home.css';
-import { FaInstagram, FaFacebookF, FaTwitter } from 'react-icons/fa';
 
 const Home = () => {
   return (
@@ -15,16 +14,9 @@ const Home = () => {
             className="logo-image"
           />
 
-          <div className="social-icons">
-            <FaInstagram />
-            <FaFacebookF />
-            <FaTwitter />
-          </div>
+   
 
-          <p className="description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua.
-          </p>
+   
         </div>
       </div>
 
