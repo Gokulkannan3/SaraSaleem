@@ -8,11 +8,12 @@ const Home = () => {
         <div className="content-wrapper">
 
           {/* SVG logo from public/ */}
-          <img
-            src="/Sara_Saleem_Foundation_Logo.svg"
-            alt="Sara Saleem Foundation Logo"
-            className="logo-image"
-          />
+   <img
+  src="/Justice_For_Sara_Saleem_Logo.svg"
+  alt="Sara Saleem Foundation Logo"
+  className="logo-image"
+/>
+
 
    
 

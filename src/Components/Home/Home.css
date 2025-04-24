@@ -1,7 +1,7 @@
 .home-container {
   display: flex;
   height: 100vh;
-  background: url('/public/bg.jpeg') no-repeat  top/cover;
+  background: url('/public/bg3.jpg') no-repeat  top/cover;
   color: white;
   font-family: 'Segoe UI', sans-serif;
   overflow: hidden;
