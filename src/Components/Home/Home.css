@@ -1,12 +1,37 @@
+
 .home-container {
   display: flex;
   height: 100vh;
-  background: url('/public/bg3.jpg') no-repeat  top/cover;
+  background-image: url('/public/2.svg'), url('/public/bg1.png');
+  background-repeat: no-repeat, no-repeat;
+  background-position: center center, center top;
+  background-size: cover, 41%;
   color: white;
   font-family: 'Segoe UI', sans-serif;
   overflow: hidden;
-  padding: 0 60px;
+  padding: 0px 60px 0 60px;
 }
+.bg1-overlay {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 41%;
+  height: auto;
+  z-index: 1; /* On top of background, behind content */
+  pointer-events: none; /* So it doesn't block clicks */
+}
+
+.home-container {
+  position: relative; /* So absolute children are scoped */
+  background-image: url('/public/2.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  overflow: hidden;
+}
+
+
 
 .left-section {
   flex: 2;
@@ -70,13 +95,14 @@
   color: #ffffff; /* fade the line on hover */
 }
 
-
 .logo-image {
   width: 100%;
-  max-width: 420px;  height: auto;
+  max-width: 400px;  height: auto;
   /* ← ADD: turn black into white */
   filter: brightness(0) invert(1);
+  margin-bottom: 300px;
 }
+
 
 
 /* Optional: Responsive tweak */

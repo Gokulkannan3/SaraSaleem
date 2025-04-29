@@ -1,0 +1,222 @@
+.press-container {
+  min-height: 100vh;
+  background-color: #434343;
+  color: #f1f1f1;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 120px;
+  box-sizing: border-box;
+  gap: 80px;
+  overflow-x:hidden;
+  }
+  
+  .press-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+  }
+  
+  img.geopolitics-logo {
+    filter: brightness(0) invert(1);
+    width:200px;
+  }
+
+  .press-arrow {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 100;
+    margin: 0; /* Remove previous margins */
+    transform: none; /* Remove previous transform */
+}
+
+.press-arrow img {
+    width: 30px; /* Adjust size as needed */
+    height: auto;
+    filter: brightness(0) invert(1); /* Make arrow white */
+}
+
+  .press-title {
+    position: fixed;
+    top: 30%;
+    left: 15%;
+    font-size: 100px;
+    font-weight: 300;
+    z-index: 10;
+  }
+
+  img.circle{
+    position:fixed;
+    top:30%;
+    right:68%;
+  }
+  
+  
+  .press-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+  
+  .press-item1 {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-width: 600px;
+    transform:translateY(-60px);
+  }
+
+  .press-item2 {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-width: 600px;
+    transform:translateY(-100px);
+  }
+
+  .press-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-width: 600px;
+  }
+
+  .p1{
+    height:80px;
+    width:100px;
+  }
+
+  .rcw{
+    height:70px;
+    width:80px;
+  }
+
+  .tablet{
+    height:90px;
+    width:150px;
+  }
+
+  .ap{
+    height:200px;
+    width:250px;
+    transform:translate(-20px);
+    margin-top:-20px;
+  }
+
+  .policy {
+    font-size: 30px;
+    font-weight:bold;
+    font-style: italic;
+    transform:translateY(10px);
+  }  
+
+  .premier{
+    height:90px;
+    width:150px;
+  }
+  
+  .press-description {
+    font-size: 16px;
+    color: #cfcfcf;
+    line-height: 1.6;
+  }
+
+  .press-description1 {
+    font-size: 16px;
+    color: #cfcfcf;
+    line-height: 1.6;
+    transform:translateY(-80px);
+  }
+  
+  .press-link {
+    font-size: 20px;
+    color: #f1f1f1;
+    text-decoration: underline;
+    width: fit-content;
+    transition: color 0.3s;
+  }
+
+  .press-link1 {
+    font-size: 20px;
+    color: #f1f1f1;
+    text-decoration: underline;
+    width: fit-content;
+    transition: color 0.3s;
+    transform:translateY(-80px);
+  }
+  
+  .press-link:hover {
+    color: #fff;
+  }
+   
+
+  @media screen and (max-width: 768px) {
+    .press-left {
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .press-container {
+      flex-direction: column;
+      padding: 2rem 1rem;
+      gap: 2rem;
+    }
+
+    .press-left {
+      position: static;
+      transform: none;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      transform:translateY(-20px);
+    }
+
+    .press-title {
+      position: static;
+      font-size: 50px;
+      margin-bottom: 1rem;
+      transform:translateY(-110px);
+    }
+
+    img.circle {
+      position: static;
+      width: 60px;
+      height: 60px;
+      margin-bottom: 1rem;
+      transform:translateX(80px);
+    }
+  
+    .press-right {
+      grid-template-columns: 1fr;
+      transform:translateY(-150px);
+    }
+  
+    .press-item, .press-item1 {
+      padding: 0.8rem;
+    }
+  
+    .press-description, .press-description1 {
+      font-size: 0.85rem;
+    }
+  
+    .press-link, .press-link1 {
+      font-size: 0.8rem;
+    }
+  
+    .circle {
+      width: 32px;
+      height: 32px;
+    }
+
+    .press-arrow {
+      position: fixed;
+      margin-top: -15px;
+      left: -125px;
+  }
+}
