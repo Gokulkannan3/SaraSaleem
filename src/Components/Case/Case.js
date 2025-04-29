@@ -1,6 +1,6 @@
 import React from 'react'
 import './Case.css'
-import logo from '../../images/caseimage.png'
+import logo from '../../images/bg4.png'
 // import circle from '../../images/circle.png'
 import arrow from '../../images/left-arrows.png'
 import { Link } from 'react-router-dom'

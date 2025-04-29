@@ -1,27 +1,29 @@
-import React from 'react'
-import './Contact.css'
-import arrow from '../../images/left-arrows.png'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import './Contact.css';
+import arrow from '../../images/left-arrows.png';
+import { Link } from 'react-router-dom';
 
 export default function Contact() {
   return (
-    <div className='contact-container'>
-      <div className='contact-arrow'>
-            <Link to='/'>
-            <img src={arrow} alt='back'/>
-            </Link>
-        </div>
-      <div className='content'>
-        <p className='title'>Contact</p>
+    <div className="contact-container">
+      <div className="contact-arrow">
+        <Link to="/">
+          <img src={arrow} alt="back" />
+        </Link>
       </div>
-      <div className='sub-content'>
-        <p className='contact-details'>Get Involved</p>
-        <p className='contact-details'>Seek Help</p>
-        <p className='contact-details'>Media Queries</p>
+      <p className="contact-title">Contact</p>
+      <div className="contact-options">
+        <div>Get Involved</div>
+        <div>Seek Help</div>
+        <div>Media Inquiries</div>
       </div>
-      <div className='contact-end'>
-        <p className='end-text'>For legal or press inquiries related to Sara Saleem’s case, contact:</p>
-      </div>
+      <p className="contact-note">
+        For legal or press inquiries related to Sara Saleem’s case, contact:<br />
+        Sam Amsterdam, Amsterdam Group Public Relations Inc —&nbsp;
+        <a href="mailto:samuelamsterdam@googlemail.com">
+          samuelamsterdam@googlemail.com
+        </a>
+      </p>
     </div>
-  )
+  );
 }
