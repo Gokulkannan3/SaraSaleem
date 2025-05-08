@@ -194,4 +194,7 @@
         width: 100%;
         left: 0 !important;
     }
+    .home-button {
+        position: fixed;
+    }
 }

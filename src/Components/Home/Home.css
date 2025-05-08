@@ -115,9 +115,10 @@
   }
 
   .bg1-overlay {
-    width: 90%;
-    transform:translateY(250px);
-    margin-left:-165px;
+    width: 100%;
+    height:66%;
+    transform:translateY(150px);
+    margin-left:-200px;
   }
 
   .left-section {
@@ -132,6 +133,7 @@
 
   .logo-image {
     max-width: 80%;
+    transform:translateY(-100px);
   }
 
   .desktop-only {
@@ -166,7 +168,7 @@
   }
 
   .sub-title{
-    transform:translateY(350px);
+    transform:translateY(320px);
   }
 
   .text-subtitle{

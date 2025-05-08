@@ -42,11 +42,10 @@ const Home = () => {
         <Link to="/back" onClick={() => setMenuOpen(false)}>Background to Injustice</Link>
         <Link to="/story" onClick={() => setMenuOpen(false)}>The Story</Link>
         <Link to="/timeline" onClick={() => setMenuOpen(false)}>Legal Timeline</Link>
-        <Link to="/press" onClick={() => setMenuOpen(false)}>Next Steps</Link>
-        <Link to="/press" onClick={() => setMenuOpen(false)}>Media Coverage</Link>
+        <Link to="/next-step" onClick={() => setMenuOpen(false)}>Next Steps</Link>
+        <Link to="/media" onClick={() => setMenuOpen(false)}>Media Coverage</Link>
         <Link to="/press" onClick={() => setMenuOpen(false)}>Press Releases</Link>
         <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
-        <Link to="/press" onClick={() => setMenuOpen(false)}>Partners</Link>
       </div>
     </div>
   );

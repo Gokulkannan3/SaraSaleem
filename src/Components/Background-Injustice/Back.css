@@ -85,7 +85,7 @@
     width:800px;
     position: fixed;
     top: 230px;
-    transform:translateX(250px);
+    transform:translateX(50px);
     border-radius: 10px;
   }
   
@@ -179,7 +179,7 @@
     }
   
     .press-item{
-      margin-top:-110px;
+      margin-top:-250px;
     }
 
     .homeb-button {
