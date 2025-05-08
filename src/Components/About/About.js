@@ -1,52 +1,38 @@
 import React from 'react';
 import './About.css';
-import judge1 from '../../images/judge1.jpg';
-import judge2 from '../../images/judge2.webp';
-import judge3 from '../../images/judge3.webp';
-import arrow from '../../images/left-arrows.png';
+import about from '../../images/about-sara.png';
 import { Link } from 'react-router-dom';
+import { FaHome } from 'react-icons/fa';
 
 export default function About() {
-  const items = [
-    {
-      img: judge1,
-      title: "Cleansing Iraq's Judiciary",
-      text: "Advocate for legal and institutional reforms to combat foreign interference in Iraq’s judiciary."
-    },
-    {
-      img: judge2,
-      title: "Iran’s Militia Corruption",
-      text: "Expose corruption tied to Iran-backed militias and their enablers."
-    },
-    {
-      img: judge3,
-      title: "Survivors Need Justice NOW",
-      text: "Support survivors of kidnapping, torture, and financial crimes."
-    }
-  ];
-
   return (
-    <div className='about-container'>
-      <div className='about-arrow'>
-        <Link to='/'>
-          <img src={arrow} alt='Back to home' />
-        </Link>
+    <div className='press-container'>
+      <div className='heading'>
+        <h4>About Sara</h4>
       </div>
-
-      <div className='about-content'>
-        <h1 className='title'>About Us</h1>
-
-        <div className='about-parts'>
-          {items.map(({ img, title, text }, i) => (
-            <div className='part' key={i}>
-              <div className='jimage'>
-                <img src={img} alt={title} />
-              </div>
-              <strong className='topic'>{title}</strong>
-              <p className='content'>{text}</p>
-              <button className='learn-more'>Learn More</button>
-            </div>
-          ))}
+      <div className='press-left'>
+        <Link to='/' className='homea-button'>
+          <FaHome className='homea-icon' />
+        </Link>
+        <div className='abouts-back'>
+          <img src={about} className='abouts-circle' alt='Sara with children' />
+          <h4>Sara with her children in Washington D.C.</h4>
+        </div>
+      </div>
+      <div className='press-right'>
+        <div className='abouts-item'>
+          <p>
+            Sara Saleem's story is not just about injustice — it's about resistance in the face of systemic oppression. Her lawsuit lifts the veil on a brutal campaign of harassment, extortion, and violence.
+          </p>
+          <p>
+            Her abduction and torture were not isolated acts, but part of a broader effort to silence voices of reform and confiscate wealth from successful individuals.
+          </p>
+          <p>
+            The case exposes a dangerous overlap between state power and violent militias, making it a landmark in holding international human rights violators accountable.
+          </p>
+          <p>
+            With the support of a world-class legal team, Sara's voice now echoes far beyond Erbil — calling for transparency, justice, and global accountability.
+          </p>
         </div>
       </div>
     </div>

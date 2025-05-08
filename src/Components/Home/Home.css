@@ -1,16 +1,17 @@
-
 .home-container {
   display: flex;
   height: 100vh;
-  background-image: url('/public/2.svg'), url('/public/bg1.png');
-  background-repeat: no-repeat, no-repeat;
-  background-position: center center, center top;
-  background-size: cover, 41%;
+  background-image: url('/public/2.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
   color: white;
   font-family: 'Segoe UI', sans-serif;
-  overflow: hidden;
-  padding: 0px 60px 0 60px;
+  overflow-x: hidden;
+  padding: 0 60px;
+  position: relative;
 }
+
 .bg1-overlay {
   position: absolute;
   top: 0;
@@ -18,54 +19,51 @@
   transform: translateX(-50%);
   width: 41%;
   height: auto;
-  z-index: 1; /* On top of background, behind content */
-  pointer-events: none; /* So it doesn't block clicks */
+  z-index: 1;
+  pointer-events: none;
 }
-
-.home-container {
-  position: relative; /* So absolute children are scoped */
-  background-image: url('/public/2.svg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  overflow: hidden;
-}
-
-
 
 .left-section {
   flex: 2;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 60px;
+  z-index: 2;
 }
 
 .content-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
   max-width: 500px;
+  padding-left: 20px;
 }
 
-.logo-text {
-  font-size: 54px;
-  font-weight: 400;
-  line-height: 1.3;
+.logo-image {
+  width: 100%;
+  max-width: 400px;
+  filter: brightness(0) invert(1);
 }
 
-.social-icons {
-  display: flex;
-  gap: 25px;
-  font-size: 20px;
+.sub-title {
+  margin-top: 10px;
 }
 
-.description {
-  font-size: 15px;
-  line-height: 1.5;
-  color: #ccc;
+.text-subtitle {
+  font-size: 30px;
+  text-align: left;
+  font-weight:bold;
+}
+
+.sub-title p{
+  font-size:20px;
+  display:flex;
+  text-align:left;
 }
 
 .right-section {
-  /* keep your existing container rules… */
   flex: 1;
   max-width: 300px;
   display: flex;
@@ -74,50 +72,114 @@
   align-items: flex-end;
   gap: 20px;
   padding-bottom: 60px;
+  z-index: 2;
 }
 
 .right-section a {
-  display: block;                /* full‑width link */
+  display: block;
   width: 100%;
-  text-align: right;             /* text flush right */
+  text-align: right;
   color: rgba(255, 255, 255, 0.685);
   font-size: 18px;
   text-decoration: none;
-    
-  padding: 8px 0;                /* vertical spacing */
-  border-bottom: 1px solid white;/* the underline */
-  transition: border-color 0.3s;  /* for hover fade if you like */
+  padding: 8px 0;
+  border-bottom: 1px solid white;
+  transition: border-color 0.3s, color 0.3s;
 }
-
 
 .right-section a:hover {
-  border-color: rgb(255, 255, 255);
-  color: #ffffff; /* fade the line on hover */
+  border-color: #ffffff;
+  color: #ffffff;
 }
 
-.logo-image {
-  width: 100%;
-  max-width: 400px;  height: auto;
-  /* ← ADD: turn black into white */
-  filter: brightness(0) invert(1);
-  margin-bottom: 300px;
+.hamburger {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 28px;
+  z-index: 3;
+  cursor: pointer;
 }
 
+.desktop-only {
+  display: block;
+}
 
-
-/* Optional: Responsive tweak */
+/* Mobile View */
 @media (max-width: 768px) {
   .home-container {
     flex-direction: column;
     padding: 40px 20px;
+    align-items: center;
   }
 
-  .left-section, .right-section {
-    align-items: flex-start;
+  .bg1-overlay {
+    width: 90%;
+    transform:translateY(250px);
+    margin-left:-165px;
+  }
+
+  .left-section {
+    align-items: center;
+  }
+
+  .content-wrapper {
+    padding-left: 0;
+    align-items: center;
+    justify-content:start;
+  }
+
+  .logo-image {
+    max-width: 80%;
+  }
+
+  .desktop-only {
+    display: none;
   }
 
   .right-section {
+    display: none;
+  }
+
+  .right-section.mobile-show {
+    display: flex;
+    position: absolute;
+    top: 60px;
+    background: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    padding: 20px;
+    flex-direction: column;
     align-items: flex-start;
-    margin-top: 40px;
+    z-index: 2;
+    gap: 16px;
+  }
+
+  .right-section.mobile-show a {
+    text-align: left;
+    width: 100%;
+  }
+
+  .hamburger {
+    display: block;
+    color: white;
+  }
+
+  .sub-title{
+    transform:translateY(350px);
+  }
+
+  .text-subtitle{
+    display:flex;
+    text-align:center;
+    font-size:25px;
+    font-weight:bold;
+  }
+
+  .sub-title p{
+    font-size:20px;
+    display:flex;
+    text-align:center;
+    margin-bottom:100px;
   }
 }
