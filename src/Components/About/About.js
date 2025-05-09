@@ -6,11 +6,11 @@ import { FaHome } from 'react-icons/fa';
 
 export default function About() {
   return (
-    <div className='press-container'>
+    <div className='pressa-container'>
       <div className='heading'>
         <h4>About Sara</h4>
       </div>
-      <div className='press-left'>
+      <div className='pressa-left'>
         <Link to='/' className='homea-button'>
           <FaHome className='homea-icon' />
         </Link>
@@ -19,7 +19,7 @@ export default function About() {
           <h4>Sara with her children in Washington D.C.</h4>
         </div>
       </div>
-      <div className='press-right'>
+      <div className='pressa-right'>
         <div className='abouts-item'>
           <p>
             Sara Saleem's story is not just about injustice — it's about resistance in the face of systemic oppression. Her lawsuit lifts the veil on a brutal campaign of harassment, extortion, and violence.

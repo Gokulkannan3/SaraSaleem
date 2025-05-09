@@ -14,7 +14,7 @@ export default function Back() {
         <Link to='/' className='homeb-button'>
           <FaHome className='homeb-icon' />
         </Link>
-        <div className='back'>
+        <div className='backb'>
           <img src={back} className='circle' alt='circle'/>
           <h4>Sara In Erbil</h4>
         </div>
