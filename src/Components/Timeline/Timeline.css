@@ -198,3 +198,9 @@
         position: fixed;
     }
 }
+
+@media (max-width: 1550px){
+    .timeline-line{
+        height:82%;
+    }
+}

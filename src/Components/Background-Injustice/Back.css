@@ -74,7 +74,7 @@
   }
   
   .back h4 {
-    margin-top: calc(70vh - 100px) !important;
+    margin-top: calc(70vh - 100px);
     text-align: center;
     position:fixed;
     font-size:50px;
@@ -107,92 +107,112 @@
     font-size:20px;
   }
   
-  @media screen and (max-width: 768px) {
-    .press-left {
-      display:flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 1.5rem;
-    }
-  
-    .press-container {
-      flex-direction: column;
-      padding: 5rem 1rem 2rem;
-      gap: 2rem;
-    }
-  
-    .press-left {
-      position: static;
-      transform: none;
-      margin-bottom: 1.5rem;
-      text-align: center;
-      transform:translateY(-20px);
-    }
-  
-    .press-title {
-      position: static;
-      font-size: 50px;
-      margin-bottom: 1rem;
-      transform:translateY(-10px);
-    }
-
-    .heading{
-      transform:translateY(80px);
-      height:5px;
-    }
-
-    .heading h4{
-      transform:translateY(20px);
-    }
-  
-    img.circle {
-      position: static;
-      width: 100%;
-      height: 100%;
-      margin-bottom: 1rem;
-      transform:translateX(-1px);
-    }
-  
-    .press-right {
-      grid-template-columns: 1fr;
-      margin-top:-400px;
-    }
-  
-    .press-item, .press-item1 {
-      padding: 0.8rem;
-    }
-  
-    .press-description, .press-description1 {
-      font-size: 0.85rem;
-    }
-  
-    .press-link, .press-link1 {
-      font-size: 0.8rem;
-    }
-  
-    .back h4{
-      margin-top: calc(52vh - 200px) !important;
-      text-align: center;
-      position:fixed;
-      font-size:30px;
-      margin-left:-10px;
-    }
-  
-    .press-item{
-      margin-top:-250px;
-    }
-
-    .homeb-button {
-      position: fixed;
-      top: -50px;
-      left: 1px;
-      width: 40px ;
-      height: 40px;
-      z-index: 9999 !important;
-    }
-    
-    .homeb-icon {
-        font-size: 20px !important;
-    }
-
+@media screen and (max-width: 768px) {
+  .press-left {
+    display:flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-bottom: 1.5rem !important;
   }
+
+  .press-container {
+    flex-direction: column !important;
+    padding: 5rem 1rem 2rem !important;
+    gap: 2rem !important;
+  }
+
+  .press-left {
+    position: static !important;
+    transform: none !important;
+    margin-bottom: 1.5rem !important;
+    text-align: center !important;
+    transform:translateY(-20px);
+  }
+
+  .press-title {
+    position: static!important;
+    font-size: 50px !important;
+    margin-bottom: 1rem !important;
+    transform:translateY(-10px) !important;
+  }
+
+  .heading{
+    transform:translateX(-180px) !important;
+    height:5px !important;
+    margin-top:25px !important;
+  }
+
+  .heading h4{
+    transform:translateY(-20px) !important;
+    font-size:25px !important;
+  }
+
+  img.circle {
+    position: static !important;
+    width: 100% !important;
+    height: 100% !important;
+    margin-bottom: 1rem !important;
+    transform:translateX(-1px) !important;
+  }
+
+  .press-right {
+    grid-template-columns: 1fr !important;
+    margin-top:-400px !important;
+  }
+
+  .press-item, .press-item1 {
+    padding: 0.8rem !important;
+  }
+
+  .press-description, .press-description1 {
+    font-size: 0.85rem !important;
+  }
+
+  .press-link, .press-link1 {
+    font-size: 0.8rem !important;
+  }
+
+  .back h4{
+    margin-top: calc(25vh - 200px) !important;
+    text-align: center !important;
+    position:static !important;
+    font-size:30px !important;
+    margin-left:-10px !important;
+  }
+
+  .press-item{
+    margin-top:-250px !important;
+  }
+
+  .homeb-button {
+    position: fixed !important;
+    top: 5 !important;
+    left: 5 !important;
+    width: 40px !important;
+    height: 40px !important;
+    z-index: 9999 !important;
+  }
+  
+  .homeb-icon {
+      font-size: 20px !important;
+  }
+}
+
+@media screen and (max-width: 1550px){
+  img.circle{
+    width:45%;
+    transform:translateX(20px);
+    margin-top:-50px;
+  }
+
+  .back h4{
+    transform:translateY(1px);
+    text-align:center;
+    font-size:25px;
+    margin-left:10px;
+  }
+
+  .press-item{
+    margin-top:50px;
+  }
+}
