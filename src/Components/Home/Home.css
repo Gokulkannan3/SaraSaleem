@@ -137,6 +137,7 @@
   .logo-image {
     max-width: 80% !important;
     transform:translateY(-100px) !important;
+    margin-left:2px !important;
   }
 
   .desktop-only {

@@ -100,7 +100,6 @@ img.abouts-circle {
 .abouts-item {
   display: flex;
   flex-direction: column;
-  gap: 20px;
   width: 100%;
   margin-top: 150px;
 }
@@ -160,18 +159,18 @@ img.abouts-circle {
     position: relative;
     width: 100%;
     max-height: 500px !important;
-    top: 50px;
+    margin-top: 60px;
     transform: none;
     margin-bottom: 1rem;
   }
 
   .abouts-back h4 {
     position: static;
-    margin-top: 50px !important;
-    transform: none;
+    margin-top: 0px !important;
+    margin-left: 90%;
     font-size: 25px;
-    max-width: 100%;
     padding: 0 1rem;
+    height:30px;
   }
 
   .press-right {
@@ -179,7 +178,7 @@ img.abouts-circle {
   }
 
   .abouts-item {
-    margin-top: -10px !important;
+    margin-top: -18px !important;
     padding: 0 0.8rem;
   }
 

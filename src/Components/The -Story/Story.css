@@ -98,7 +98,6 @@ img.about-circle {
 .about-item {
     display: flex;
     flex-direction: column;
-    gap: 20px;
     padding-bottom: 40px;
     margin-top:50px;
 }
