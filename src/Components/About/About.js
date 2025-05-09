@@ -15,7 +15,7 @@ export default function About() {
           <FaHome className='homea-icon' />
         </Link>
         <div className='abouts-back'>
-          <img src={about} className='about-circle' alt='Sara with children' />
+          <img src={about} className='abouts-circle' alt='Sara with children' />
           <h4>Sara with her children in Washington D.C.</h4>
         </div>
       </div>

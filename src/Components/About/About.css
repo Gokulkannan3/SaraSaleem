@@ -147,7 +147,7 @@ img.abouts-circle {
       transform:translateY(-110px);
   }
 
-  img.about-circle {
+  img.abouts-circle {
     position: static !important;
     width: 100% !important;
     height:100% !important;
@@ -181,7 +181,7 @@ img.abouts-circle {
 }
 
   .abouts-back h4{
-    margin-top: calc(12vh - 100px) !important;
+    margin-top: calc(10vh - 100px) !important;
     text-align: center;
     position:static !important;
     font-size:25px !important;
