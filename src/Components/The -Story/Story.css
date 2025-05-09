@@ -130,8 +130,9 @@ img.about-circle {
 
     .about-back h4 {
         font-size: 20px !important;
-        margin-top:-800px !important;
+        margin-top:-820px !important;
         position:static !important;
+        font-weight:bold !important;
     }
 
     img.about-circle {
@@ -160,7 +161,7 @@ img.about-circle {
     }
 
     .about-item{
-        margin-top: 780px !important;
+        margin-top: 800px !important;
         display:flex !important;
     }
 

@@ -149,7 +149,7 @@ img.abouts-circle {
 
   img.about-circle {
     position: static !important;
-    width: 90% !important;
+    width: 100% !important;
     height:100% !important;
     margin-bottom: 1rem;
     transform:translateX(-1px);
@@ -181,9 +181,9 @@ img.abouts-circle {
 }
 
   .abouts-back h4{
-    margin-top: calc(38vh - 100px) !important;
+    margin-top: calc(12vh - 100px) !important;
     text-align: center;
-    position:fixed;
+    position:static !important;
     font-size:25px !important;
     margin-left:50px !important;
   }
