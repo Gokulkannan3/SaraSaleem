@@ -43,7 +43,6 @@ const Home = () => {
         <Link to="/story" onClick={() => setMenuOpen(false)}>The Story</Link>
         <Link to="/timeline" onClick={() => setMenuOpen(false)}>Legal Timeline</Link>
         <Link to="/next-step" onClick={() => setMenuOpen(false)}>Next Steps</Link>
-        <Link to="/media" onClick={() => setMenuOpen(false)}>Media Coverage</Link>
         <Link to="/press" onClick={() => setMenuOpen(false)}>Press</Link>
         <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
       </div>
