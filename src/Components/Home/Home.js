@@ -1,23 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Home.css';
 import { Link } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Home = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
+  // Update isMobile state on window resize
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div className="home-container">
-      <img src="/bg1.png" alt="Overlay Graphic" className="bg1-overlay" />
+      <img
+        src={isMobile ? '/bg1.png' : '/bg1.png'} // Conditional image source
+        alt="Overlay Graphic"
+        className="bg1-overlay"
+      />
 
       {/* Hamburger Icon - Visible only on Mobile */}
       <div className="hamburger" onClick={toggleMenu}>
         {menuOpen ? <FaTimes /> : <FaBars />}
       </div>
 
-      {/* Left Section */}
+      {/* Rest of your JSX remains the same */}
       <div className="left-section">
         <div className="content-wrapper">
           <img
@@ -36,7 +48,6 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Right Section: Always visible on desktop, toggled on mobile */}
       <div className={`right-section ${menuOpen ? 'mobile-show' : ''}`}>
         <Link to="/about" onClick={() => setMenuOpen(false)}>About Sara</Link>
         <Link to="/back" onClick={() => setMenuOpen(false)}>Background to Injustice</Link>
