@@ -1,9 +1,18 @@
-import React from 'react';
+import React, {useEffect,useState} from 'react';
 import { Link } from 'react-router-dom';
 import { FaHome } from 'react-icons/fa';
 import './Contact.css';
 
 export default function Contact() {
+  const [emailHref, setEmailHref] = useState("mailto:info@dreva.ai");
+
+  useEffect(() => {
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if (!isMobile) {
+      // On desktop, use Gmail web link
+      setEmailHref("https://mail.google.com/mail/?view=cm&to=samuelamsterdam@googlemail.com");
+    }
+  }, []);
   return (
     <div className="contact-container">
       <div className="press-left">
@@ -21,7 +30,11 @@ export default function Contact() {
       <p className="contact-note">
         For legal or press inquiries related to Sara Saleem’s case, contact:<br />
         Sam Amsterdam, Amsterdam Group Public Relations Inc —{' '}
-        <a href="mailto:samuelamsterdam@googlemail.com">
+        <a
+          href={emailHref}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           samuelamsterdam@googlemail.com
         </a>
       </p>
