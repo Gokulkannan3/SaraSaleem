@@ -1,13 +1,26 @@
-import React from 'react';
+import React, {useState,useEffect} from 'react';
 import './Next.css';
 import judge1 from '../../images/judge1.jpg';
 import judge2 from '../../images/judge2.webp';
 import judge3 from '../../images/judge3.webp';
 import judge4 from '../../images/judge4.jpg'
-import { FaHome } from 'react-icons/fa';
+import { FaLongArrowAltLeft, FaBars, FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 export default function About() {
+
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+
+  // Update isMobile state on window resize
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const items = [
   {
     img: judge1,
@@ -34,9 +47,12 @@ export default function About() {
 
   return (
     <div className='abt-container'>
+      <div className="hamburger" onClick={toggleMenu}>
+        {menuOpen ? <FaTimes /> : <FaBars />}
+      </div>
       <div className='abt-arrow'>
         <Link to='/' className='homen-button'>
-          <FaHome className='homen-icon' />
+          <FaLongArrowAltLeft className='homen-icon' />
         </Link>
       </div>
 
@@ -55,6 +71,15 @@ export default function About() {
             </div>
           ))}
         </div>
+      </div>
+      <div className={`rightp-section ${menuOpen ? 'mobilep-show' : ''}`}>
+        <Link to="/about" onClick={() => setMenuOpen(false)}>About Sara</Link>
+        <Link to="/back" onClick={() => setMenuOpen(false)}>Background to Injustice</Link>
+        <Link to="/story" onClick={() => setMenuOpen(false)}>The Story</Link>
+        <Link to="/timeline" onClick={() => setMenuOpen(false)}>Legal Timeline</Link>
+        <Link to="/next-step" onClick={() => setMenuOpen(false)}>Next Steps</Link>
+        <Link to="/press" onClick={() => setMenuOpen(false)}>Press</Link>
+        <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
       </div>
     </div>
   );

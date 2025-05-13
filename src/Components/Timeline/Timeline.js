@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { ChevronDown, ChevronUp } from "lucide-react"
 import './Timeline.css'
-import { FaHome } from 'react-icons/fa';
+import { FaLongArrowAltLeft, FaBars, FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const timelineEvents = [
@@ -46,6 +46,16 @@ const timelineEvents = [
 export default function Timeline() {
 
     const [expandedId, setExpandedId] = useState(null)
+    const [menuOpen, setMenuOpen] = useState(false);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+    
+    const toggleMenu = () => setMenuOpen(!menuOpen);
+  
+    useEffect(() => {
+      const handleResize = () => setIsMobile(window.innerWidth <= 768);
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const toggleExpand = (id) => {
     setExpandedId(expandedId === id ? null : id)
@@ -53,9 +63,12 @@ export default function Timeline() {
 
     return (
     <div className="timeline-wrapper">
+      <div className="hamburger" onClick={toggleMenu}>
+        {menuOpen ? <FaTimes /> : <FaBars />}
+      </div>
       <div className='press-arrow'>
         <Link to='/' className='home-button'>
-          <FaHome className='home-icon' />
+          <FaLongArrowAltLeft className='home-icon' />
         </Link>
       </div>
       <h1 className="timeline-title">Legal Timeline</h1>
@@ -95,6 +108,15 @@ export default function Timeline() {
               </div>
           </div>
           ))}
+      </div>
+      <div className={`rights-section ${menuOpen ? 'mobile-show' : ''}`}>
+        <Link to="/about" onClick={() => setMenuOpen(false)}>About Sara</Link>
+        <Link to="/back" onClick={() => setMenuOpen(false)}>Background to Injustice</Link>
+        <Link to="/story" onClick={() => setMenuOpen(false)}>The Story</Link>
+        <Link to="/timeline" onClick={() => setMenuOpen(false)}>Legal Timeline</Link>
+        <Link to="/next-step" onClick={() => setMenuOpen(false)}>Next Steps</Link>
+        <Link to="/press" onClick={() => setMenuOpen(false)}>Press</Link>
+        <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
       </div>
   </div>
   )

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Press.css';
 import p1 from '../../images/p1.png';
 import RCW from '../../images/rcw.png';
@@ -12,15 +12,30 @@ import blitz from '../../images/BlitZ.jpg';
 import Ap from '../../images/Ap-removebg-preview.png';
 import crux from '../../images/crux-removebg-preview.png';
 import { Link } from 'react-router-dom';
-import { FaHome } from 'react-icons/fa';
+import { FaLongArrowAltLeft, FaBars, FaTimes } from 'react-icons/fa';
 
 export default function Press() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+
+  // Update isMobile state on window resize
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div className='presss-container'>
+      <div className="hamburgerp" onClick={toggleMenu}>
+        {menuOpen ? <FaTimes /> : <FaBars />}
+      </div>
       <div className='presss-left'>
         <div className='presss-arrow'>
           <Link to='/' className='homep-button'>
-            <FaHome className='homep-icon' />
+            <FaLongArrowAltLeft className='homep-icon' />
           </Link>
         </div>
         <img src={circle} className='circles' alt='circle' />
@@ -53,15 +68,15 @@ export default function Press() {
         </div>
         
         <div className='presss-item'>
-          <img src={thepillar} alt="The Geopolitics" className="geopolitics-logo" />
+          <img src={thepillar} alt="The Pillar" className="geopolitics-logo" />
           <p className='presss-description'>
-            An Iraqi Catholic leader has strongly denied an allegation of complicity in the 2014 kidnapping of a businesswoman, after a lawsuit filed this month in a U.S. court.The complaint, filed Feb. 13 in the United States District Court for the Eastern District of Virginia, alleges that Archbishop Bashar Warda "facilitated, through his connections to Iran-backed militias such as Rayan al Kildani's Babylon Brigades, the scheme to extort, kidnap, torture, and attempt to kill" the plaintiff, Sara Saleem.
+            An Iraqi Catholic leader has strongly denied an allegation of complicity in the 2014 kidnapping of a businesswoman, after a lawsuit filed this month in a U.S. court. The complaint, filed Feb. 13 in the United States District Court for the Eastern District of Virginia, alleges that Archbishop Bashar Warda "facilitated, through his connections to Iran-backed militias such as Rayan al Kildani's Babylon Brigades, the scheme to extort, kidnap, torture, and attempt to kill" the plaintiff, Sara Saleem.
           </p>
           <a href='https://www.pillarcatholic.com/p/iraqi-archbishop-categorically-denies' className='presss-link'>Learn more →</a>
         </div>
         
         <div className='presss-item'>
-          <img src={church} alt="The Geopolitics" className="geopolitics-logo" />
+          <img src={church} alt="Church Times" className="geopolitics-logo" />
           <p className='presss-description'>
             THE Chaldean Catholic Archbishop of Erbil, in Iraq, Mar Bashar Warda, has denied allegations made in a US lawsuit that he was complicit in the kidnapping and torture of an Iraqi-US businesswoman, Sara Saleem.
           </p>
@@ -69,7 +84,7 @@ export default function Press() {
         </div>
         
         <div className='presss-item'>
-          <img src={premier} alt="The Geopolitics" className="premier" />
+          <img src={premier} alt="Premier Christian News" className="premier" />
           <p className='presss-description'>
             The Chaldean Catholic Archbishop of Erbil has strongly denied allegations in a US lawsuit accusing him of involvement in the kidnapping and torture of Iraqi-American businesswoman Sara Saleem.
           </p>
@@ -77,7 +92,7 @@ export default function Press() {
         </div>
         
         <div className='presss-item'>
-          <img src={tablet} alt="The Geopolitics" className="tablet" />
+          <img src={tablet} alt="The Tablet" className="tablet" />
           <p className='presss-description'>
             Archbishop Bashar Warda said it was 'shameful and disgraceful to suggest that I am using the Vatican as a reference to influence a judicial decision'. A Kurdish-American businesswoman who has made allegations of corruption against Archbishop Bashar Warda of Erbil said the Vatican should suspend him and launch its own investigation.
           </p>
@@ -85,7 +100,7 @@ export default function Press() {
         </div>
         
         <div className='presss-item'>
-          <img src={blitz} alt="The Geopolitics" className="tablet" />
+          <img src={blitz} alt="Weekly Blitz" className="tablet" />
           <p className='presss-description'>
             Since the demise of strongman Saddam Hussein, it is fair to say that Iraq's judicial system has undergone significant changes. At first, says a new report from the Iraq Watch Group of the Middle East Centre of the London School of Economics (LSE), the reforms appeared to create a more independent judiciary. However, the truth quickly emerged that it has instead become increasingly centralized and politicized.
           </p>
@@ -101,7 +116,7 @@ export default function Press() {
         </div>
         
         <div className='presss-item1'>
-          <img src={Ap} alt="The Geopolitics" className="ap" />
+          <img src={Ap} alt="Amsterdam & Partners" className="ap" />
           <p className='presss-description1'>
             WASHINGTON DC, March 2, 2025 – Robert Amsterdam, an international lawyer and member of the legal team representing Sara Saleem, has hailed a groundbreaking new report published by the Iraq Watch Group of the Middle East Centre of the London School of Economics.
           </p>
@@ -129,12 +144,21 @@ export default function Press() {
         </div>
         
         <div className='presss-item2'>
-          <img src={crux} alt="The Geopolitics" className="tablet" />
+          <img src={crux} alt="Crux" className="tablet" />
           <p className='presss-description'>
             ROME – An Iraqi-American woman has named Chaldean Catholic Archbishop Bashar Warda in a federal lawsuit in the United States over claims about his personal, political, and business ties to what is essentially the Iraqi mafia.
           </p>
           <a href='https://cruxnow.com/church-in-the-middle-east/2025/03/erbil-archbishop-named-in-federal-lawsuit-targeting-iraqi-mob' className='presss-link'>Learn more →</a>
         </div>
+      </div>
+      <div className={`rightp-section ${menuOpen ? 'mobilep-show' : ''}`}>
+        <Link to="/about" onClick={() => setMenuOpen(false)}>About Sara</Link>
+        <Link to="/back" onClick={() => setMenuOpen(false)}>Background to Injustice</Link>
+        <Link to="/story" onClick={() => setMenuOpen(false)}>The Story</Link>
+        <Link to="/timeline" onClick={() => setMenuOpen(false)}>Legal Timeline</Link>
+        <Link to="/next-step" onClick={() => setMenuOpen(false)}>Next Steps</Link>
+        <Link to="/press" onClick={() => setMenuOpen(false)}>Press</Link>
+        <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
       </div>
     </div>
   );

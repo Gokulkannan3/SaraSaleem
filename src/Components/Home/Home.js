@@ -25,7 +25,7 @@ const Home = () => {
       />
 
       {/* Hamburger Icon - Visible only on Mobile */}
-      <div className="hamburger" onClick={toggleMenu}>
+      <div className="hamburgerh" onClick={toggleMenu}>
         {menuOpen ? <FaTimes /> : <FaBars />}
       </div>
 

@@ -1,18 +1,33 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Back.css';
 import back from '../../images/Back-injustice.png';
 import { Link } from 'react-router-dom';
-import { FaHome } from 'react-icons/fa';
+import { FaLongArrowAltLeft, FaBars, FaTimes } from 'react-icons/fa';
 
 export default function Back() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+
+  // Update isMobile state on window resize
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div className='press-container'>
+      <div className="hamburgerb" onClick={toggleMenu}>
+        {menuOpen ? <FaTimes /> : <FaBars />}
+      </div>
       <div className='heading'>
         <h4>Background to Injustice</h4>
       </div>
       <div className='press-left'>
         <Link to='/' className='homeb-button'>
-          <FaHome className='homeb-icon' />
+          <FaLongArrowAltLeft className='homeb-icon' />
         </Link>
         <div className='backb'>
           <img src={back} className='circle' alt='circle'/>
@@ -34,6 +49,15 @@ export default function Back() {
             The suit accuses them of orchestrating a violent plot to abduct and extort Sara Saleem, in an attempt to strip her of her lucrative stake in a major Iraqi real estate development.
           </p>
         </div>
+      </div>
+      <div className={`rightb-section ${menuOpen ? 'mobile-show' : ''}`}>
+        <Link to="/about" onClick={() => setMenuOpen(false)}>About Sara</Link>
+        <Link to="/back" onClick={() => setMenuOpen(false)}>Background to Injustice</Link>
+        <Link to="/story" onClick={() => setMenuOpen(false)}>The Story</Link>
+        <Link to="/timeline" onClick={() => setMenuOpen(false)}>Legal Timeline</Link>
+        <Link to="/next-step" onClick={() => setMenuOpen(false)}>Next Steps</Link>
+        <Link to="/press" onClick={() => setMenuOpen(false)}>Press</Link>
+        <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
       </div>
     </div>
   );

@@ -95,7 +95,7 @@
   color: #ffffff;
 }
 
-.hamburger {
+.hamburgerh {
   display: none;
   position: absolute;
   top: 20px;
@@ -166,7 +166,7 @@
     width: 100% !important;
   }
 
-  .hamburger {
+  .hamburgerh {
     display: block !important;
     color: white !important;
   }

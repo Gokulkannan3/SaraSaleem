@@ -1,6 +1,6 @@
 import React, {useEffect,useState} from 'react';
+import { FaLongArrowAltLeft, FaBars, FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { FaHome } from 'react-icons/fa';
 import './Contact.css';
 
 export default function Contact() {
@@ -13,11 +13,27 @@ export default function Contact() {
       setEmailHref("https://mail.google.com/mail/?view=cm&to=samuelamsterdam@googlemail.com");
     }
   }, []);
+
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+
+  // Update isMobile state on window resize
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div className="contact-container">
+      <div className="hamburger" onClick={toggleMenu}>
+        {menuOpen ? <FaTimes /> : <FaBars />}
+      </div>
       <div className="press-left">
-        <Link to="/" className="homeb-button">
-          <FaHome className="homeb-icon" />
+        <Link to="/" className="homec-button">
+          <FaLongArrowAltLeft className="homeb-icon" />
         </Link>
       </div>
       <h1 className="contact-title">Contact</h1>
@@ -38,6 +54,15 @@ export default function Contact() {
           samuelamsterdam@googlemail.com
         </a>
       </p>
+      <div className={`rightp-section ${menuOpen ? 'mobilep-show' : ''}`}>
+        <Link to="/about" onClick={() => setMenuOpen(false)}>About Sara</Link>
+        <Link to="/back" onClick={() => setMenuOpen(false)}>Background to Injustice</Link>
+        <Link to="/story" onClick={() => setMenuOpen(false)}>The Story</Link>
+        <Link to="/timeline" onClick={() => setMenuOpen(false)}>Legal Timeline</Link>
+        <Link to="/next-step" onClick={() => setMenuOpen(false)}>Next Steps</Link>
+        <Link to="/press" onClick={() => setMenuOpen(false)}>Press</Link>
+        <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
+      </div>
     </div>
   );
 }

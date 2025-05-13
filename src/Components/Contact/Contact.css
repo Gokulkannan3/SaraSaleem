@@ -6,7 +6,7 @@
   min-height: 100vh;
   padding: 20px;
   text-align: center;
-  background-color: #434343; /* Fixed typo */
+  background-color: #434343;
   color: #f1f1f1;
 }
 
@@ -16,16 +16,56 @@
   left: 20px;
 }
 
-.homeb-button {
+.homec-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  transition: all 0.3s ease;
   text-decoration: none;
 }
 
+.homec-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
 .homeb-icon {
-  font-size: 24px;
+  color: white;
+  font-size: 20px;
+}
+
+.hamburger {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hamburger:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.hamburger svg {
+  color: white;
+  font-size: 20px;
 }
 
 .contact-title {
@@ -56,8 +96,8 @@
   max-width: 800px;
 }
 
-.justice{
-    font-size:25px;
+.justice {
+  font-size: 25px;
 }
 
 .contact-note a {
@@ -68,7 +108,7 @@
 @media screen and (max-width: 768px) {
   .contact-title {
     font-size: 40px;
-    margin-top:-100px;
+    margin-top: -100px;
   }
 
   .contact-options {
@@ -88,5 +128,18 @@
   .press-left {
     top: 10px;
     left: 10px;
+  }
+
+  .homec-button {
+    top: -230px;
+    left: 10px;
+    width: 40px;
+    height: 40px;
+    z-index: 9999;
+  }
+
+  .hamburger {
+    top: 10px;
+    right: 10px;
   }
 }

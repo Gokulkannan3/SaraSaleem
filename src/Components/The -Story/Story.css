@@ -107,6 +107,68 @@ img.about-circle {
     line-height: 1.6;
 }
 
+.rights-section {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    top: 80px;
+    right: 0;
+    height: calc(50vh - 80px);
+    width: 250px;
+    z-index: 999;
+    right:20px;
+}
+
+.rights-section.mobile-show {
+    display: flex;
+}
+
+.rights-section a {
+    display: block;
+    width: 100%;
+    text-align: right;
+    color: rgba(255, 255, 255, 0.685);
+    font-size: 15px;
+    text-decoration: none;
+    padding: 8px 0;
+    border-bottom: 1px solid white;
+    transition: border-color 0.3s, color 0.3s;
+}
+
+.rights-section a:hover {
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+.hamburger {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hamburger:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.hamburger svg {
+    color: white;
+    font-size: 20px;
+}
+
 @media screen and (max-width: 1550px) {
     .press-container {
         padding: 80px 60px;
@@ -119,19 +181,17 @@ img.about-circle {
         height: auto;
         border-radius: 10px;
         object-fit: cover;
-        position: fixed;
-        top: 150px; /* Same as .about-back */
-        left: 200px; /* Same as .about-back */
+        position: relative;
+        top: 0;
     }
 
     .about-back h4 {
         text-align: center;
         font-size: 24px;
         width: 100%;
-        position: fixed;
-        top: calc(150px + 500px + 20px); /* Image top + image height + margin */
-        left: 150px; /* Same as .about-back */
-        max-width: 500px;
+        margin-top: 20px;
+        position: relative;
+        max-width: 400px;
     }
 
     .about-item p {
@@ -162,25 +222,26 @@ img.about-circle {
         padding: 0 !important;
     }
 
-    .heading{
-        margin-top:20px !important;
-        transform:translateX(-200px) !important;
+    .heading {
+        margin-top: 20px !important;
+        transform: translateX(-50%) !important;
     }
+
     .press-left {
         margin-bottom: 40px !important;
     }
 
     .about-back h4 {
         font-size: 20px !important;
-        transform: translateY(2px) !important;
-        position:static !important;
-        font-weight:bold !important;
+        position: static !important;
+        font-weight: bold !important;
+        margin-top: 20px !important;
     }
 
     img.about-circle {
         max-width: 100% !important;
         margin-top: 30px !important;
-        position:static !important;
+        position: static !important;
     }
 
     .press-right {
@@ -190,21 +251,41 @@ img.about-circle {
     }
 
     .homes-button {
-        top: 10px !important;
+        top: -40px !important;
         left: 10px !important;
     }
-    
-    .home-icon {
+
+    .homes-icon {
         font-size: 18px !important;
     }
 
-    .about-item{
-        margin-top: 300px !important;
-        display:flex !important;
+    .rights-section {
+    display: none !important;
     }
 
-    .about-item p{
-        width:100% !important;
+    .rights-section.mobile-show {
+        display: flex !important;
+        position: absolute !important;
+        top: 80px !important;
+        background: rgba(0, 0, 0, 0.9) !important;
+        width: 70% !important;
+        padding: 20px !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        z-index: 2 !important;
+        gap: 16px !important;
+        height: calc(50vh - 60px) !important;
+    }
+
+    .rights-section.mobile-show a {
+        text-align: rightt !important;
+        width: 100% !important;
+    }
+
+    .hamburger {
+        display: flex !important;
+        color: white !important;
+        align-items:center !important;
     }
 }
 

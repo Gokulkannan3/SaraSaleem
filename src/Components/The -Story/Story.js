@@ -1,21 +1,33 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Story.css';
 import story from '../../images/story.png';
-import { FaHome } from 'react-icons/fa';
+import { FaLongArrowAltLeft, FaBars, FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 export default function Story() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div className='press-container'>
+      <div className="hamburger" onClick={toggleMenu}>
+        {menuOpen ? <FaTimes /> : <FaBars />}
+      </div>
       <div className='heading'>
         <h4>Sara's Story</h4>
       </div>
       <div className='press-left'>
-        <div className='press-arrow'>
-          <Link to='/' className='homes-button'>
-            <FaHome className='homes-icon' />
-          </Link>
-        </div>
+        <Link to='/' className='homes-button'>
+          <FaLongArrowAltLeft className='homes-icon' />
+        </Link>
         <div className='about-back'>
           <img src={story} className='about-circle' alt='circle' />
           <h4>In Erbil after escape</h4>
@@ -90,6 +102,15 @@ export default function Story() {
             “I don’t want revenge,” she says. “I want justice. I want my children to know that we don’t bow to bullies. We fight them — in court, with truth, and with faith.”
           </p>
         </div>
+      </div>
+      <div className={`rights-section ${menuOpen ? 'mobile-show' : ''}`}>
+        <Link to="/about" onClick={() => setMenuOpen(false)}>About Sara</Link>
+        <Link to="/back" onClick={() => setMenuOpen(false)}>Background to Injustice</Link>
+        <Link to="/story" onClick={() => setMenuOpen(false)}>The Story</Link>
+        <Link to="/timeline" onClick={() => setMenuOpen(false)}>Legal Timeline</Link>
+        <Link to="/next-step" onClick={() => setMenuOpen(false)}>Next Steps</Link>
+        <Link to="/press" onClick={() => setMenuOpen(false)}>Press</Link>
+        <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
       </div>
     </div>
   );

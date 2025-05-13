@@ -8,7 +8,7 @@
     padding: 80px 120px;
     box-sizing: border-box;
     gap: 80px;
-    overflow: hidden; /* Changed from overflow-x: hidden to overflow: hidden */
+    overflow: hidden;
 }
 
 .press-left {
@@ -16,8 +16,8 @@
     justify-content: center;
     align-items: center;
     padding-top: 60px;
-    position: relative; /* Added to contain absolute positioned elements */
-    width: 50%; /* Added to control width */
+    position: relative;
+    width: 50%;
 }
 
 .homeb-button {
@@ -46,6 +46,32 @@
     font-size: 20px;
 }
 
+.hamburgerb {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hamburgerb:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.hamburgerb svg {
+    color: white;
+    font-size: 20px;
+}
+
 .heading {
     position: absolute;
     top: 20px;
@@ -62,7 +88,7 @@
     flex-direction: column;
     align-items: center;
     height: 100%;
-    width: 100%; /* Added to contain child elements */
+    width: 100%;
 }
 
 .backb h4 {
@@ -79,16 +105,16 @@ img.circle {
     top: 120px;
     transform: translateX(5px);
     border-radius: 10px;
-    max-width: 100%; /* Added for responsiveness */
+    max-width: 100%;
 }
 
 .press-right {
     flex: 1;
     display: flex;
     flex-direction: column;
-    overflow: hidden; /* Added to hide overflow */
-    width: 50%; /* Added to control width */
-    padding-right: 20px; /* Added to prevent text from touching edge */
+    overflow: hidden;
+    width: 50%;
+    padding-right: 20px;
     box-sizing: border-box;
 }
 
@@ -96,11 +122,49 @@ img.circle {
     display: flex;
     flex-direction: column;
     max-width: 100%;
-    margin-top:100px;
+    margin-top: 100px;
 }
 
 .press-item p {
     font-size: 20px;
+    color: #cfcfcf;
+    line-height: 1.6;
+}
+
+.rightb-section {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    top: 80px;
+    right: 22px;
+    height: calc(50vh - 80px);
+    width: 250px;
+    z-index: 999;
+    left:-500;
+}
+
+.rightb-section.mobile-show {
+    display: flex;
+}
+
+.rightb-section a {
+    display: block;
+    width: 100%;
+    text-align: right;
+    color: rgba(255, 255, 255, 0.685);
+    font-size: 15px;
+    text-decoration: none;
+    padding: 8px 0;
+    border-bottom: 1px solid white;
+    transition: border-color 0.3s, color 0.3s;
+}
+
+.rightb-section a:hover {
+    border-color: #ffffff;
+    color: #ffffff;
 }
 
 @media screen and (max-width: 1550px) {
@@ -121,8 +185,8 @@ img.circle {
         margin-top: 80px;
     }
 
-    .press-item p{
-      font-size:16px;
+    .press-item p {
+        font-size: 16px;
     }
 }
 
@@ -132,7 +196,8 @@ img.circle {
         justify-content: center !important;
         align-items: center !important;
         margin-bottom: 1.5rem !important;
-        width: 100%; /* Added for mobile */
+        width: 100% !important;
+        height: auto !important;
     }
 
     .press-container {
@@ -146,27 +211,19 @@ img.circle {
         transform: none !important;
         margin-bottom: 1.5rem !important;
         text-align: center !important;
-        transform: translateY(-20px);
-        height: auto; /* Added for mobile */
-    }
-
-    .press-title {
-        position: static !important;
-        font-size: 50px !important;
-        margin-bottom: 1rem !important;
-        transform: translateY(-10px) !important;
+        transform: translateY(-20px) !important;
     }
 
     .heading {
-      transform: translateX(-180px) !important;
-      height: 5px !important;
-      margin-top: 40px !important;
+        transform: translateX(-180px) !important;
+        height: 5px !important;
+        margin-top: 40px !important;
     }
 
     .heading h4 {
         transform: translateY(-10px) !important;
         font-size: 25px !important;
-        margin-top:50px;
+        margin-top: 50px !important;
     }
 
     img.circle {
@@ -176,25 +233,22 @@ img.circle {
         margin-bottom: 1rem !important;
         transform: translateX(-1px) !important;
         top: auto !important;
-        margin-top:50px !important;
+        margin-top: 70px !important;
     }
 
     .press-right {
         width: 100% !important;
         margin-top: -400px !important;
-        padding-right: 0 !important; /* Removed padding for mobile */
+        padding-right: 0 !important;
     }
 
-    .press-item, .press-item1 {
+    .press-item {
         padding: 0.8rem !important;
+        margin-top: 250px !important;
     }
 
-    .press-description, .press-description1 {
+    .press-item p {
         font-size: 0.85rem !important;
-    }
-
-    .press-link, .press-link1 {
-        font-size: 0.8rem !important;
     }
 
     .backb h4 {
@@ -206,20 +260,41 @@ img.circle {
         margin-left: -10px !important;
     }
 
-    .press-item {
-        margin-top: 250px !important;
+    .homeb-button {
+        top: -40px !important;
+        left: -1px !important;
     }
 
-    .homeb-button {
-        position: fixed !important;
-        top: 5 !important;
-        left: 5 !important;
-        width: 40px !important;
-        height: 40px !important;
-        z-index: 9999 !important;
+    .hamburger {
+        display: block !important;
+        color: white !important;
+        align-items:center !important;
     }
 
     .homeb-icon {
         font-size: 20px !important;
+    }
+
+    .rightb-section {
+        display: none !important;
+    }
+
+    .rightb-section.mobile-show {
+        display: flex !important;
+        position: absolute !important;
+        top: 80px !important;
+        background: rgba(0, 0, 0, 0.9) !important;
+        width: 70% !important;
+        padding: 20px !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        z-index: 2 !important;
+        gap: 16px !important;
+        height: calc(50vh - 60px) !important;
+    }
+
+    .rightb-section.mobile-show a {
+        text-align: right !important;
+        width: 100% !important;
     }
 }
