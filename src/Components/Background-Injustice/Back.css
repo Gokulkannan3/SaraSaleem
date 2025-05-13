@@ -164,7 +164,7 @@ img.circle {
     }
 
     .heading h4 {
-        transform: translateY(-10px) !important;
+        transform: translateY(-20px) !important;
         font-size: 25px !important;
         margin-top:50px;
     }
@@ -198,7 +198,7 @@ img.circle {
     }
 
     .backb h4 {
-        margin-top: calc(25vh - 200px) !important;
+        margin-top: calc(22vh - 200px) !important;
         text-align: center !important;
         position: static !important;
         font-size: 30px !important;
@@ -220,5 +220,35 @@ img.circle {
 
     .homeb-icon {
         font-size: 20px !important;
+    }
+}
+
+@media screen and (max-width: 430px){
+    .backb h4 {
+        margin-top: calc(22vh - 200px) !important;
+        text-align: center !important;
+        position: static !important;
+        font-size: 30px !important;
+        margin-left: -10px !important;
+    }
+}
+
+@media screen and (max-width: 414px){
+    .backb h4 {
+        margin-top: calc(27vh - 200px) !important;
+        text-align: center !important;
+        position: static !important;
+        font-size: 30px !important;
+        margin-left: -10px !important;
+    }
+}
+
+@media screen and (max-width: 375px){
+    .backb h4 {
+        margin-top: calc(25vh - 200px) !important;
+        text-align: center !important;
+        position: static !important;
+        font-size: 30px !important;
+        margin-left: -10px !important;
     }
 }
