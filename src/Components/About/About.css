@@ -186,7 +186,7 @@ img.abouts-circle {
   }
 
   .abouts-item {
-    margin-top: 40px;
+    margin-top: 20px;
   }
 
   img.abouts-circle {
@@ -197,7 +197,7 @@ img.abouts-circle {
     border-radius: 10px;
     object-fit: cover;
     top: 50%;
-    transform: translateY(-48%);
+    transform: translateY(-50%);
   }
 
   .abouts-item p {
