@@ -175,7 +175,7 @@ img.circle {
     }
 
     .backb h4 {
-        transform: translateY(5px);
+        transform: translateY(15px);
         text-align: center;
         font-size: 25px;
         margin-left: -10px;
