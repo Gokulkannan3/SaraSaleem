@@ -18,11 +18,13 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <img
-        src={isMobile ? '/bg1.png' : '/bg1.png'} // Conditional image source
-        alt="Overlay Graphic"
-        className="bg1-overlay"
-      />
+      <div className='im'>
+        <img
+          src={isMobile ? '/bg1.png' : '/bg1.png'} // Conditional image source
+          alt="Overlay Graphic"
+          className="bg1-overlay"
+        />
+      </div>
 
       {/* Hamburger Icon - Visible only on Mobile */}
       <div className="hamburgerh" onClick={toggleMenu}>
