@@ -25,13 +25,9 @@ const Home = () => {
           className="bg1-overlay"
         />
       </div>
-
-      {/* Hamburger Icon - Visible only on Mobile */}
       <div className="hamburgerh" onClick={toggleMenu}>
         {menuOpen ? <FaTimes /> : <FaBars />}
       </div>
-
-      {/* Rest of your JSX remains the same */}
       <div className="left-section">
         <div className="content-wrapper">
           <img

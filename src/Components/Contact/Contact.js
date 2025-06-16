@@ -37,12 +37,7 @@ export default function Contact() {
         </Link>
       </div>
       <h1 className="contact-title">Contact</h1>
-      <div className="contact-options">
-        <div>Get Involved</div>
-        <div>Seek Help</div>
-        <div>Media Inquiries</div>
-      </div>
-      <h4 className='justice'>#Justice for Sara Saleem</h4>
+      <h4 className='justice'>#JusticeforSaraSaleem</h4>
       <p className="contact-note">
         For legal or press inquiries related to Sara Saleem’s case, contact:<br />
         Sam Amsterdam, Amsterdam Group Public Relations Inc —{' '}

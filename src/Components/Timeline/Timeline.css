@@ -116,6 +116,26 @@
     left: 50.5%;
 }
 
+.timeline-event.left .timeline-event-title{
+    margin-left:8px;
+}
+
+.timeline-event.left .timeline-description{
+    margin-left:8px;
+}
+
+.timeline-event.right .timeline-event-title{
+    display:flex;
+    justify-content:left;
+    margin-left:8px;
+}
+
+.timeline-event.right .timeline-description{
+    display:flex;
+    justify-content:left;
+    margin-left:8px;
+}
+
 .timeline-card {
     background-color: white;
     border-radius: 0.5rem;

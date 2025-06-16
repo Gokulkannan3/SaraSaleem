@@ -1,3 +1,11 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
 .pressa-container {
   min-height: 100vh;
   background-color: #434343;
@@ -8,7 +16,8 @@
   padding: 80px 120px;
   box-sizing: border-box;
   gap: 80px;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .pressa-left {
@@ -194,6 +203,10 @@ img.abouts-circle {
   .abouts-item p {
     font-size: 16px;
   }
+
+  .righta-section.mobile-show{
+    height:350px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -203,8 +216,20 @@ img.abouts-circle {
 
   .pressa-container {
     flex-direction: column;
-    padding: 5rem 1rem 2rem;
+    padding: 5rem 1rem 4rem;
     gap: 2rem;
+    min-height: 100vh;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative; /* Add this */
+  }
+
+  /* Add this to ensure content can scroll */
+  body, html {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    width: 100% !important;
   }
 
   .pressa-left,

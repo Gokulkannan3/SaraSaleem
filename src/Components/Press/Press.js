@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState} from 'react';
 import './Press.css';
 import p1 from '../../images/p1.png';
 import RCW from '../../images/rcw.png';
 import thepillar from '../../images/the-pillar.png';
 import TCG from '../../images/The-Geopolitics-logo-latest-1.png';
-import circle from '../../images/circle.png';
 import church from '../../images/churchtimeslogo.png';
 import premier from '../../images/Premier-CN-Logo.svg';
 import tablet from '../../images/TheTablet.webp';
@@ -16,16 +15,8 @@ import { FaLongArrowAltLeft, FaBars, FaTimes } from 'react-icons/fa';
 
 export default function Press() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
-
-  // Update isMobile state on window resize
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 768);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   return (
     <div className='presss-container'>
@@ -38,7 +29,6 @@ export default function Press() {
             <FaLongArrowAltLeft className='homep-icon' />
           </Link>
         </div>
-        <img src={circle} className='circles' alt='circle' />
         <p className='presss-title'>Press</p>
       </div>
       

@@ -120,11 +120,14 @@
 /* Media Queries */
 @media screen and (max-width: 1550px) {
   .abt-parts {
-    gap: clamp(30px, 4vw, 80px);
+    gap: 100px;
   }
 
   .abt-jimage {
     width: clamp(200px, 16vw, 260px);
+  }
+  .rights-section.mobile-show{
+    height:350px;
   }
 }
 

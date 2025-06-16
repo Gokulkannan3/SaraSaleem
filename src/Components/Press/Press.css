@@ -222,6 +222,12 @@ img.circles {
   transition: border-color 0.3s, color 0.3s;
 }
 
+@media screen and (max-width: 1550px){
+  .rightp-section.mobilep-show{
+    height:350px !important;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .presss-left {
     display: flex;

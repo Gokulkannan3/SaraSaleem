@@ -178,24 +178,26 @@ img.about-circle {
     img.about-circle {
         width: 100%;
         max-width: 400px;
-        height: auto;
+        height: 70%;
         border-radius: 10px;
         object-fit: cover;
-        position: relative;
-        top: 0;
+        top: 150px;
     }
 
     .about-back h4 {
         text-align: center;
         font-size: 24px;
         width: 100%;
-        margin-top: 20px;
-        position: relative;
+        top: calc(30px + 500px + 125px);
         max-width: 400px;
     }
 
     .about-item p {
         font-size: 17px;
+    }
+
+    .rights-section.mobile-show{
+        height:350px;
     }
 }
 
@@ -286,6 +288,10 @@ img.about-circle {
         display: flex !important;
         color: white !important;
         align-items:center !important;
+    }
+
+    .about-item{
+        margin-top:300px;
     }
 }
 
