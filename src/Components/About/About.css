@@ -197,7 +197,7 @@ img.abouts-circle {
     border-radius: 10px;
     object-fit: cover;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-48%);
   }
 
   .abouts-item p {
