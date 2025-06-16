@@ -186,7 +186,7 @@ img.abouts-circle {
   }
 
   .abouts-item {
-    margin-top: 60px;
+    margin-top: 40px;
   }
 
   img.abouts-circle {
@@ -256,7 +256,7 @@ img.abouts-circle {
   .abouts-back h4 {
     position: static;
     margin-top: 0px !important;
-    margin-left: 90%;
+    margin-left: 110%;
     font-size: 25px;
     padding: 0 1rem;
     height: 30px;
