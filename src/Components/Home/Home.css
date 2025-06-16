@@ -7,7 +7,6 @@
   background-size: cover;
   color: white;
   font-family: 'Segoe UI', sans-serif;
-  overflow-x: hidden;
   padding: 0 60px;
   position: relative;
 }
@@ -109,21 +108,17 @@
   display: block;
 }
 
-/* Mobile View */
-/* Mobile View */
 @media (max-width: 768px) {
-  /* Prevent scrolling on the entire page */
   body, html {
     overflow: hidden !important;
     height: 100vh !important;
-  }
+  } 
 
   .home-container {
     flex-direction: column !important;
     padding: 20px !important;
     align-items: center !important;
     overflow: hidden !important;
-    height: 100vh !important;
     box-sizing: border-box !important;
   }
 
@@ -144,6 +139,7 @@
     overflow: hidden !important;
     height: auto !important;
     flex: 1 !important;
+    overflow:hidden !important;
   }
 
   .content-wrapper {
@@ -152,6 +148,7 @@
     justify-content: start !important;
     transform: none !important;
     height: auto !important;
+    overflow:hidden;
   }
 
   .logo-image {
@@ -217,10 +214,14 @@
 
 @media (max-width: 1550px){
 
+  .home-container{
+    overflow:hidden;
+  }
+
   .content-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 30px;
     max-width: 400px;
     padding-left: 20px;
     margin-top:-80px;

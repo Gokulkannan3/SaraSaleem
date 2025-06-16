@@ -120,7 +120,7 @@
 /* Media Queries */
 @media screen and (max-width: 1550px) {
   .abt-parts {
-    gap: 100px;
+    gap:0px 150px;
   }
 
   .abt-jimage {
