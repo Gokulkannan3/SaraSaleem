@@ -47,7 +47,6 @@ export default function Timeline() {
 
     const [expandedId, setExpandedId] = useState(null)
     const [menuOpen, setMenuOpen] = useState(false);
-    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
     
     const toggleMenu = () => setMenuOpen(!menuOpen);
   
