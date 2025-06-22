@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 export default function Story() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
